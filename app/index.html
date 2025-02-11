@@ -119,7 +119,15 @@
 	<p id="below-message"></p>
 
     <script>
-        const API_URL = window.location.origin;
+        let API_URL = window.location.protocol + "//" + window.location.hostname;
+
+		// Ignore ports 80, 443, and 1000
+		if (window.location.port && !["80", "443", "1000"].includes(window.location.port)) {
+			API_URL += `:${window.location.port}`;
+		}
+
+		console.log(API_URL); // Debug output
+
         
         function showMessage(id, text, isError = false, showProgress = false) {
 			const messageElement = document.getElementById(id);
