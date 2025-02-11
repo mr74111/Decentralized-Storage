@@ -119,7 +119,7 @@
 	<p id="below-message"></p>
 
     <script>
-        const API_URL = "http://localhost:5000";
+        const API_URL = `${window.location.protocol}//${window.location.hostname}:${window.location.port || 6000}`;
         
         function showMessage(id, text, isError = false, showProgress = false) {
 			const messageElement = document.getElementById(id);
