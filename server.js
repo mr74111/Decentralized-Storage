@@ -7,7 +7,7 @@ const { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand, ListO
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 
 // Fix SSL verification issue (Use only if necessary)
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const app = express();
 const port = process.env.PORT || 5000;
